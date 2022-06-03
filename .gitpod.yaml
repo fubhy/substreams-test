@@ -1,0 +1,9 @@
+tasks:
+  - before: |
+      # Use correct binary for your platform
+      wget https://github.com/streamingfast/substreams/releases/download/v0.0.5-beta3/substreams_0.0.5-beta3_linux_x86_64.tar.gz
+      tar -xzvf substreams_0.0.5-beta3_linux_x86_64.tar.gz
+      export PATH="`pwd`:$PATH"
+    init: |
+      cargo build
+      cargo install protoc-gen-prost
